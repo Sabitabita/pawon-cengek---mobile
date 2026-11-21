@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+
 import '../models/menu_dto.dart';
 import '../models/transaksi_dto.dart';
 import '../services/offline_sync_service.dart';
 
 class PosViewModel extends ChangeNotifier {
   final OfflineSyncService _syncService = OfflineSyncService();
-
+  int get totalOmsetHariIni => 125000 + totalBayar;
   // Daftar menu Warung Makan Pawon Cengek
   final List<MenuDto> daftarMenu = [
     MenuDto(
